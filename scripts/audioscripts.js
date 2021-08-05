@@ -1,8 +1,4 @@
-
 // JavaScript source code
-
-
-
 const maxVoices = 32;
 var currentVoice = 0;
 var voices = [];
@@ -18,9 +14,7 @@ function voiceinit() {
         newVoice.id = 'audio_channel-' + i;
         newVoice.className = 'audio_channel';
         voices.push(newVoice);
-
-    }
-    
+    }    
 }
 
 function StartAudio(filename, startingVolume, looping) {
@@ -34,15 +28,12 @@ function StartAudio(filename, startingVolume, looping) {
     newAudioObj.loop = looping; 
 
     newAudioObj.play();
-
-    
 }
 
 
 
 
 function PlayAudioClip(base_filename, numberofsamples, startingVolume) {
-
     let i = getRandomInt(1, numberofsamples);
     let clipFileName = base_filename + "_" + i + ".mp3";
 
@@ -64,7 +55,6 @@ function ChooseAndStartAudio(basename, numberofsamples, startingVolume) {
 
 
 function MakeAudioTrigger(el, audioclip, numsamps, startingVol) {
-
     el.addEventListener("mouseenter", function () {
         PlayAudioClip(audioclip, numsamps, startingVol);
         if (textBlockSection > 8) PlayAudioClip(audioclip, numsamps, startingVol);
@@ -74,17 +64,11 @@ function MakeAudioTrigger(el, audioclip, numsamps, startingVol) {
     el.addEventListener("click", function () {
         PlayAudioClip(audioclip, numsamps, startingVol);
     });
-
-
 }
 
-
-
-
-
 function FadeAudio(audioID, targetVol, duration) {
-
-    // TODO: can't get a fade cancel to work
+    /* For some reason, I made a function myself */
+    
     clearInterval(TriggerSegmentFader);
     clearTimeout(StopSegmentFader);
     
@@ -122,16 +106,7 @@ function FadeAudio(audioID, targetVol, duration) {
         newTotalVol = Math.min(Math.max(0, fadeVol + startingVol), 1);
         audioToFade.volume = newTotalVol;
     }
-
-                                                
-
-
 }
-
-
-
-
-
 
 function MuteAudioOutput() {
     isMuted = !isMuted;
@@ -147,28 +122,5 @@ function MuteAudioOutput() {
     for (var i = 0; i < newAudioObjects.length; ++i) {
         FadeAudio(newAudioObjects[i].id, newVol, 0.1);
     }
-
 }
-
-
-
-// Static funcs
-
-function ConvertAtoDb(amp) {
-    var db;
-    if (amp > ConvertDbtoA(-70)) {
-        db = 20 * Math.log(amp) / Math.log(10);
-    }
-    else db = -70;
-    return db;
-}
-
-function ConvertDbtoA(db) {
-    let amp = Math.pow(10, db / 20);
-    return amp;
-}
-
-
-
-
 

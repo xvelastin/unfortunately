@@ -1,30 +1,34 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
+<!-- *** Version 2.1 (August 2021): Standalone Web *** -->
+
 <head>
     <!-- Primary Meta Tags -->
-<title>unfortunately, unfortunately</title>
-<meta name="title" content="unfortunately, unfortunately">
-<meta name="description" content="A little poem made from rejection emails from arts organisations.">
+    <title>unfortunately, unfortunately</title>
+    <meta name="title" content="unfortunately, unfortunately">
+    <meta name="description" content="A little poem made from rejection emails from arts organisations.">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://xaviervelastin.com/interactive/unfortunately/unfortunately.html">
-<meta property="og:title" content="unfortunately, unfortunately">
-<meta property="og:description" content="A little poem made from rejection emails from arts organisations.">
-<meta property="og:image" content="http://xaviervelastin.com/interactive/unfortunately/screengrab1.png">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://xaviervelastin.com/interactive/unfortunately/unfortunately.html">
+    <meta property="og:title" content="unfortunately, unfortunately">
+    <meta property="og:description" content="A little poem made from rejection emails from arts organisations.">
+    <meta property="og:image" content="http://xaviervelastin.com/interactive/unfortunately/screengrab1.png">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="http://xaviervelastin.com/interactive/unfortunately/unfortunately.html">
-<meta property="twitter:title" content="unfortunately, unfortunately">
-<meta property="twitter:description" content="A little poem made from rejection emails from arts organisations.">
-<meta property="twitter:image" content="http://xaviervelastin.com/interactive/unfortunately/screengrab1.png"> 
-    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://xaviervelastin.com/interactive/unfortunately/unfortunately.html">
+    <meta property="twitter:title" content="unfortunately, unfortunately">
+    <meta property="twitter:description" content="A little poem made from rejection emails from arts organisations.">
+    <meta property="twitter:image" content="http://xaviervelastin.com/interactive/unfortunately/screengrab1.png"> 
+        
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="stylesheet.css" />
     <script src="scripts/stringhandler.js"></script>
     <script src="scripts/audioscripts.js"></script>
-    
+    <script src="scripts/jsfuncs.js"></script>
+        
 </head>
 <body>
 
@@ -38,7 +42,7 @@
     </div>
 
     <div id="mainBlock">
-        <div id="splash">
+        <div id="splash" style="display:none">
             <h1 id="title" onclick="hideanddestroy(this, 1);  hidecursor(); init();">start</h1>
         </div>
 
@@ -56,8 +60,8 @@
 
 
 <script>
-    // variables
-    var isScrolling = false;
+    // Display options //
+
     var hasInit = false;
     var audioContainer = document.getElementById("audiocontainer");
 
@@ -72,12 +76,7 @@
         splash.style.left = posX + "vw";
         
         splash.style.display = 'block';
-
-
     }
-
-    
-
 
     function init() {
         if (hasInit) return;
@@ -85,7 +84,6 @@
             LoadStrings(0);
             hasInit = true;
         }, 1000)
-
     }
 
 
@@ -101,6 +99,7 @@
         el.style.opacity = targetOpacity;
     }
 
+    /*  */
 
     function hideanddestroy(el, t) {
         el.style.transition = "opacity " + t + "s";
@@ -110,8 +109,6 @@
         }, t * 1000)
 
     }
-
-
 
     function hide(el, t) {
         el.style.transition = "opacity " + t + "s";
@@ -124,12 +121,5 @@
         el.style.opacity = '1';
 
     }
-
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
 
 </script>
