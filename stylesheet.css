@@ -1,0 +1,132 @@
+﻿
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+}
+
+::selection {
+    background: none;
+}
+
+.col {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.centred {
+    text-align: center;
+}
+
+#header {
+    width: 95vw;
+    height: 5vh;
+    margin: auto auto 1vh auto;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-around;
+    overflow: auto hidden;
+}
+
+#footer {
+    margin: 1vh auto auto auto;
+    width: 95vw;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid grey;
+    overflow: auto hidden;
+}
+
+
+div {
+    opacity: .95;
+    transition: opacity ease-in-out .5s;
+}
+
+    div:hover {
+        opacity: 1;
+    }
+
+
+h1 {
+    font-size: 60px;
+}
+
+
+
+#splash {
+    position: fixed;
+    top: 33vh;
+    left: 10vw;
+    text-align: center;
+}
+
+#title {
+    cursor: pointer;
+    color: white;
+    transition: 1s;
+}
+
+    #title:hover {
+        color: black;
+        text-shadow: 2px 2px #f500ff;
+    }
+
+.btn {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.5s;
+    color: white;
+    text-decoration: none;
+}
+
+    .btn:hover {
+        opacity: 1;
+    }
+
+
+/* == Intro block == */
+
+#mainBlock {
+    cursor: url(diamond.cur), auto;
+    height: 80vh;
+    margin: auto;
+    width: 95vw;
+    overflow: auto hidden;
+}
+
+#intro {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.introWords {
+    font-size: 24px;
+}
+
+
+.hidden {
+    opacity: 0;
+    transition: opacity ease-in-out 0.1s;
+}
+
+.hidden-hover {
+    opacity: 1;
+    transition: ease-in-out .1s;
+}
+
+.hidden-past {
+    opacity: 0;
+    transition: opacity ease-in-out 0.1s;
+}
+
+    .hidden-past:hover {
+        opacity: 1;
+        transition: ease-in-out .3s;
+    }
+
+.hidden-remains {
+    opacity: 0.5;
+    transition: 2s;
+}
