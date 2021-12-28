@@ -89,7 +89,7 @@ h1 {
 /* == Intro block == */
 
 #mainBlock {
-    cursor: url(diamond.cur), auto;
+    cursor: auto;
     height: 80vh;
     margin: auto;
     width: 95vw;
