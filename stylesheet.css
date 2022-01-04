@@ -20,7 +20,7 @@ body {
 
 #header {
     width: 95vw;
-    height: 5vh;
+    height: 8vh;
     margin: auto auto 1vh auto;
     border-bottom: 1px solid grey;
     display: flex;
